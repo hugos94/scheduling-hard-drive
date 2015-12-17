@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+import copy
+
 class FCFS(object):
     '''  Algoritmo de escalonamento do braco do disco que utiliza a politica "First Come, First Serve" para atender as requisicoes. '''
 
@@ -18,12 +20,10 @@ class FCFS(object):
 
         sum_distance = 0
 
-        for sector in inputs:
-            if (sector > current_position):
-                sum_distance += sector - current_position
-            else:
-                sum_distance += current_position - sector
+        self.inputs = copy.deepcopy(inputs)
 
+        for sector in self.inputs:
+            sum_distance += abs(current_position - sector)
             current_position = sector
 
         print("FCFS " + str(sum_distance))
