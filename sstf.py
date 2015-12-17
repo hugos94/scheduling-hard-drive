@@ -15,27 +15,27 @@ class SSTF(object):
     def execute(self, inputs):
         ''' Metodo que executa o algoritmo do elevador. '''
 
-        current_position = self.initial_sector
+        current_position = self.initial_sector # Inicializa o setor atual como o setor inicial
 
         sum_distance = 0
 
-        self.inputs = copy.deepcopy(inputs)
+        self.inputs = copy.deepcopy(inputs) # Realiza a copia profunda das entradas para uma variavel local
 
         self.inputs.sort() # Ordena a lista de entradas
 
-        while self.inputs:
+        while self.inputs: # Iteracao na lista de entrada até a lista ficar vazia
 
-            best_choice = -1
-            best_distance = self.sectors+1
+            best_choice = -1 # Inicializa a variavel best_choice com -1
+            best_distance = self.sectors+1 # Inicializa a variavel best_distance com a maior distacia permitida + 1
 
-            for value in self.inputs:
-                distance = abs(current_position - value)
-                if (distance < best_distance):
-                    best_distance = distance
-                    best_choice = value
+            for value in self.inputs: # Percorre a lista de entrada
+                distance = abs(current_position - value) # Calcula a distancia da posicao atual para a proxima
+                if (distance < best_distance): # Se a distancia for menor que a melhor distancia
+                    best_distance = distance # Armazena a melhor distancia
+                    best_choice = value # Armazena a posicao do setor
 
-            current_position = best_choice
-            self.inputs.remove(best_choice)
-            sum_distance += best_distance
+            current_position = best_choice # Posicao atual recebe a melhor escolha
+            self.inputs.remove(best_choice) # A melhor escolha e removida da lista de entradas
+            sum_distance += best_distance # A melhor distancia e somada as outras melhores distancias
 
-        print("SSTF " + str(sum_distance))
+        print("SSTF " + str(sum_distance)) # Imprime o resultado final

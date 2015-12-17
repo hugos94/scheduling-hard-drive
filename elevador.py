@@ -15,14 +15,14 @@ class Elevador(object):
     def execute(self, inputs):
         ''' Metodo que executa o algoritmo do elevador. '''
 
-        current_position = self.initial_sector
+        current_position = self.initial_sector # Inicializa o setor atual como o setor inicial
 
         sum_distance = 0
 
         inputs.sort() # Ordena a lista de entradas
         inputs_lower = [] # Cria uma lista para receber os elementos menores que o setor inicial
 
-        self.inputs = copy.deepcopy(inputs)
+        self.inputs = copy.deepcopy(inputs) # Realiza a copia profunda das entradas para uma variavel local
 
         for value in self.inputs: # Percorre a lista de setores para fazer o somatorio das distancias dos setores superiores ao inicial
             if (value > self.initial_sector): # Verifica se a o setor atual e menor que o setor inicial
@@ -35,6 +35,6 @@ class Elevador(object):
 
         for value in inputs_lower: # Percorre a lista de setores menores que o setor inicial
             sum_distance += abs(current_position - value) # Faz o somatorio dos setores
-            current_position = value
+            current_position = value # Setor atual torna-se o proximo setor
 
-        print("ELEVADOR " + str(sum_distance))
+        print("ELEVADOR " + str(sum_distance)) # Imprime o resultado final
