@@ -21,11 +21,12 @@ def main():
     initial_sector = inputs.pop(0)
 
     fcfs = FCFS(sectors, initial_sector)
+    fcfs.execute(inputs)
 
     sstf = SSTF(sectors, initial_sector)
 
     elevador = Elevador(sectors, initial_sector)
-    
+
     elevador.execute(inputs)
 
 
