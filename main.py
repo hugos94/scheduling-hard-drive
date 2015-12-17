@@ -24,6 +24,7 @@ def main():
     fcfs.execute(inputs)
 
     sstf = SSTF(sectors, initial_sector)
+    sstf.execute(inputs)
 
     elevador = Elevador(sectors, initial_sector)
 
