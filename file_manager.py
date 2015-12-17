@@ -12,6 +12,8 @@ class FileManager(object):
             try:
                 # Le o arquivo e armazena em uma lista, usando a separacao pelo fim de linha
                 data = [line.strip() for line in open(input_file, 'r')]
+                # Transforma string em int na lista
+                data = map(int, data)
                 return data
             except Exception as e:
                 print("Nao foi possivel abrir o arquivo: %s" % input_file)
