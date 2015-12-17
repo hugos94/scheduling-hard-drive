@@ -9,3 +9,7 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+FCFS 640
+SSTF 236
+ELEVADOR 299
