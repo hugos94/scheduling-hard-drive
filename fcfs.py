@@ -7,7 +7,7 @@ class FCFS(object):
     '''  Algoritmo de escalonamento do braco do disco que utiliza a politica "First Come, First Serve" para atender as requisicoes. '''
 
     def __init__(self, sectors, initial_sector):
-        ''' Inicializa o algoritmo do elevador com a quantidade de setores e o setor inicial. '''
+        ''' Inicializa o algoritmo FCFS com a quantidade de setores e o setor inicial. '''
 
         self.sectors = sectors
         self.initial_sector = initial_sector
